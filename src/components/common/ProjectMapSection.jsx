@@ -102,11 +102,6 @@ export default function ProjectMapSection() {
 
             <h3 className={styles.mapCardTitle}>Anantabhivrddhi Developers</h3>
 
-            <p className={styles.mapCardText}>
-              Add your exact address here (or landmark). You can also mention
-              nearby highway, city, or major landmark.
-            </p>
-
             <div className={styles.mapActions}>
               <a
                 href={mapsLink}
