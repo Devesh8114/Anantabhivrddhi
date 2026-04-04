@@ -202,7 +202,7 @@ export default function Footer() {
           <span>
             © Dec 2026 All Rights Reserved, Powered by{" "}
             <a
-              href="https://ardentpixels.studio/"
+              href="https://ardentpixels.in/"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.highlightedName}
