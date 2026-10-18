@@ -10,12 +10,15 @@ export default function MenuItems() {
   const pathname = usePathname();
 
   useEffect(() => {
+    // Dynamically import bootstrap JS
     import("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
 
   const isActive = useMemo(() => {
     return (href) => {
+      // Direct match for home or landing
       if (href === "/") return pathname === "/";
+      if (href === "/home") return pathname === "/home";
       return pathname?.startsWith(href);
     };
   }, [pathname]);
@@ -23,6 +26,7 @@ export default function MenuItems() {
   return (
     <nav className={`navbar navbar-expand-lg navbar-dark fixed-top ${styles.navGlass}`}>
       <div className="container">
+        {/* LOGO: Always takes user back to the Landing/Hero Page (/) */}
         <Link href="/" className={`navbar-brand d-flex align-items-center gap-2 ${styles.brand}`}>
           <Image src="/images/home-page/header-logo.png" alt="Logo" width={182} height={40} priority />
         </Link>
@@ -41,10 +45,12 @@ export default function MenuItems() {
 
         <div className="collapse navbar-collapse" id="mainNavbar">
           <ul className={`navbar-nav mx-auto mb-2 mb-lg-0 ${styles.navLinks}`}>
+            
+            {/* HOME LINK: Now points to /home (Your main website content) */}
             <li className="nav-item">
               <Link
-                href="/"
-                className={`nav-link ${styles.navLink} ${isActive("/") ? styles.active : ""}`}
+                href="/home"
+                className={`nav-link ${styles.navLink} ${isActive("/home") ? styles.active : ""}`}
               >
                 Home
               </Link>
@@ -58,7 +64,6 @@ export default function MenuItems() {
                 About Us
               </Link>
             </li>
-
 
             <li className="nav-item">
               <Link

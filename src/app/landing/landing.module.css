@@ -1,0 +1,152 @@
+.heroContainer {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* The Background Video */
+.heroVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2; /* Keeps video at the very bottom */
+}
+
+/* The Dark Overlay for Readability */
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Adjust 0.6 to make it darker/lighter */
+  z-index: -1; /* Between video and text */
+}
+
+.topBanner {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  z-index: 2;
+}
+
+.content {
+  position: relative;
+  z-index: 1; /* Sits on top of the overlay */
+  max-width: 1000px;
+  text-align: center;
+  padding: 80px 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.tagline {
+  color: #4ade80;
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.vendorBadge {
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+  margin-bottom: 30px;
+}
+
+.mainHeading {
+  font-size: clamp(38px, 4vw, 96px);
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.05;
+  margin-bottom: 25px;
+}
+
+.mainHeading span {
+  color: #f3a833;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+/* Button Styles */
+.ctaGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  font-weight: 600;
+  text-decoration: none; /* For Link components */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.btnCall { background-color: #00c853; color: white; }
+.btnWhatsapp { background-color: #ffb300; color: #000; }
+.btnConsult { background-color: #1a3a5a; color: white; border: 1px solid #334e68; }
+.btnService { background-color: #ff8f00; color: white; }
+
+/* Trust Badges */
+.trustBadges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.trustItem {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid #ddd;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .ctaGrid {
+    grid-template-columns: 1fr;
+  }
+  .topBanner {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
